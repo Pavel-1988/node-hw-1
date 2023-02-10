@@ -3,12 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index",
     "start:dev": "nodemon index"
-
   },
   "repository": {
     "type": "git",
@@ -22,8 +20,8 @@
   "homepage": "https://github.com/Pavel-1988/node-hw-1#readme",
   "dependencies": {
     "colors": "^1.4.0",
-    "commander": "^10.0.0"
-    
+    "commander": "^10.0.0",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"

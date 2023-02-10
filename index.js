@@ -3,7 +3,7 @@ const {
   getContactById,
   removeContact,
   addContact,
-} = require("./contacts"); // беремо усі функции з файлу contacts.js
+} = require("./contacts");
 
 
 const { Command } = require("commander");
@@ -27,13 +27,18 @@ const invokeAction = async ({ action,id, name, email, phone }) => {
       console.table(contacts)
       break;
 
-    // case "get":
-    //   // ... id
-    //   break;
+    case "get":
+      const contactById = await getContactById(id);
+      if(!contactById){
+        throw new Error(`Product with id=${id} not found`)
+      }
+      console.table(contactById);
+      break;
 
-    // case "add":
-    //   // ... name email phone
-    //   break;
+    case "add":
+      const newContact = await addContact(name,email,phone);
+      console.table(newContact);
+      break;
 
     // case "remove":
     //   // ... id
