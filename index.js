@@ -40,9 +40,10 @@ const invokeAction = async ({ action,id, name, email, phone }) => {
       console.table(newContact);
       break;
 
-    // case "remove":
-    //   // ... id
-    //   break;
+    case "remove":
+      const removedContact = await removeContact(id);
+      console.table(removedContact);
+      break;
 
     default:
       console.warn("\x1B[31m Unknown action type!");

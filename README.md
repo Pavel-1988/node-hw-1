@@ -6,4 +6,6 @@ https://monosnap.com/file/WBszdTkx7UoKcqVGwp1szC0vkMmEum
 
 3) # Добавялем контакт
 https://monosnap.com/file/Gbl6EGnu0Q1ApZXNY81CGKFQBCnVI2
+
 4) # Удаляем контакт
+https://monosnap.com/file/6Var1pNc69PDZ836JxyHxu131kN3y0

@@ -3,7 +3,7 @@ const path = require('path');
 const { v4 } = require('uuid');
 
 const contactsPath = path.resolve('./db/contacts.json');
-// const contactsPath = path.join(__dirname, "db/contacts.json");
+
 
 
 const listContacts = async () => {
@@ -38,7 +38,20 @@ const addContact = async (name, email, phone) => {
   }
 }
 
-function removeContact(contactId) {
-  
+const removeContact = async (contactId) =>{
+   try {
+     const contacts = await listContacts();
+     const index = contacts.findIndex(contact => contact.id === contactId);
+     const removedContact = contacts[index];
+     if (index !== -1) {
+      contacts.splice(index, 1);
+      await fs.writeFile(contactsPath, JSON.stringify(contacts));
+     };
+     
+     return removedContact ? removedContact : null
+
+  } catch (error) {
+    console.error(error);
+  }
 }
-module.exports={listContacts, getContactById, removeContact, addContact }
+module.exports = { listContacts, getContactById, removeContact, addContact }
